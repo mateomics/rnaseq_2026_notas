@@ -1,0 +1,18 @@
+# GitHub Pages
+
+Postcard con dominio `.github.io` $\rightarrow$ Desde presentación académica hasta más personal
+
+### Cómo hacerlo?
+
+
+- `postcards`
+	- Templates determinados $\rightarrow$ *Jolla*, *Trestles*, *Olana*
+- `jekyll`
+	- *Engine* por default de *Github-Pages*
+- `Quarto`
+	- Por detrás es también *HTML*
+	- Más libertad de templates
+	- Opciones interactivas
+		- Buscadores
+		- Pestañas y secciones
+		- Opciones interactivas
