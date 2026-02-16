@@ -1,0 +1,21 @@
+
+## Gabriel Ramirez-Vilchis
+
+Curso de scRNA-seq $\rightarrow$ CDSB
+
+Proyecto de Alzheimer $\rightarrow$ Causa principal de demencia en adultos de la tercera edad a nivel global $\rightarrow$ No se conocen las causas o genes causantes pero hay ideas...
+
+APOE $\rightarrow$ Muchos alelos
+- APOE 2 $\rightarrow$ Efecto neuroprotector
+- APOE 4 $\rightarrow$ Implicado en el Alzheimer
+	- Se busca en individuos en edades de riesgo pre-sintomáticos
+Datos de ancestría africana y europea
+
+Se usa single-nucleus RNA-seq
+- Single cell pero sobre núcleos
+- Se aislan y secuencian
+
+#### Análisis bioinformático
+
+$\rightarrow$ Metadatos son muy difíciles de utilizar porque están escritos en lenguaje natrual
+

@@ -1,0 +1,47 @@
+# María Gutierrez-Arcelus
+
+**Systems inmunology and regulatory genomics lab**
+
+Estrategias multiómicas para entender los estados celulares de pacientes con:
+- Lupus
+- 
+- Asma/alergias
+
+Muchas variantes genéticas de suceptibilidad a enfermedades son en regiones no codificante
+- Entender qué genes regulan ouede ayudar a diseñar estrategias de combate
+- ¿Cómo saber cuál es la variante causal?
+	- ¿Cuántas variantes no estarán correlacionadas?
+- ¿Cuál es el gen/es diana?
+- ¿Qué tipos celulares/tejidos tienen estas variantes y cómo afectan la regulación entre estos?
+	- Colocalización entre regiones regulatorias y variantes específicas
+	- Linfocitos T son importantes par a artritis reumatoide
+	- Amieloides en Alzheimer
+	- Linfocitos B en Lupus
+- Asociacón entre variantes y genes alrededor?
+	- IQT studies
+	- Efectos regulatorios pueden estar solo en estados celulares específicos
+		- TFs transitorios?
+- Linfocitos B muy subrepresentados en estudios (a diferencia de T)
+	- Funciones:
+		- Producción de anticuerpos
+		- Eliminaciónde patógenos
+		- Memoria a exposición a patógenos
+		- Regulación de respuestas inmunológicas
+	- Muchos receptores, desde generales hasta específicos
+
+### Study design
+
+PCA para observar inputs de RNA-seq de 29 estados de células B
+Permite identificar time-lapses
+
+Expresión diferencial entre todos los pares de conficiones
+- Permite ver patrones dependientes de vías
+
+Da pie a modelar la expresión de genes *pathway-dependent* el los loci de riesgo para lupus $\rightarrow$ Se buscaron módulos de genes coexpresados entre sí $\rightarrow$ Time-lapses sí están relacionados con función $\rightarrow$ ¿Cómo está relacionado con los genes de susceptibilidad? Se espera que se agrupen juntos, según el periodo de agrupación pero...
+
+Agrupación muy diversa $\rightarrow$ Aún informativo porque se descubre la correlación con cada uno de los módulos
+
+### ATAC-seq
+
+24 horas para controles y muestras
+Open chromatin profiling con ATAC-seq $\rightarrow$ variantes enriquecidas para el módulo de apertura (cromatina abierta) de loci de Lupus

@@ -1,0 +1,66 @@
+
+# Daianna González-Padilla
+
+RNA-seq en el mundo real $\rightarrow$ Cómo se ven los datos realmente?
+
+En cualquier proyecto con datos biológicos hay:
+- Errores humanos
+- Variación técnica
+- Limitaciones metodológicas
+- Complejidad biológica
+- Aleatoreidad biológica $\rightarrow$ Procesos impredictibles
+
+¿Cómo extraer conclusiones significativas entonces?
+
+1. Diseño experimental
+
+Lo hacen los experimentalistas, no los bioinformáticos... Se busca lograr poder estadístico mediante $N$s grandes (muchas muestras)
+- Se toman muestras técnicas $\rightarrow$ Permite aislar variaciones biolgicas y técnicas
+	- Se conciben como independientes pero no lo son (pseudo-replicación) 
+	- Réplicas biológicas y técnicas
+		- Modelos mixtos con jerarquías para representar varias réplicas técnicas
+- Variables de confusión (*confounder*)
+	- Variable relacionada a variables de tratamiento y a expresión génica
+	- Esto **NO** implica que estas dos variables estén relacionadas entre sí
+
+2. Sampleo y extracción de RNA
+$\rightarrow$ RNA se degrada, por lo que se debe medr qué tanta calidad se maneja en las muestras
+
+Idealmente se secuencian los transcritos de RNAs mensajeros pero en la realidad se secuencian ribosomales, mitocondriales e inclusive exógenos...
+Es posible contrastar estos porcentajes para identificar outliers, junto con la comparación de expresión en otros tejidos
+
+Idealmente los datos se procesan en un mismo *batch* pero siempre hay variabilidad técnica $\rightarrow$ Hay diferencia entre la calidad/concentración a lo largo de las muestras extraídas de cada *batch*?
+$\rightarrow$ Cómo impactan en la agrupación total de los datos? $\rightarrow$ PCA, MDS...
+
+3. Preparación de librerías
+El mRNA debería fragmentarse ne partes iguales pero no sucede $\rightarrow$ cada fragmento de lomgitud variable, contenidos de GC distintos, repetidos, estructuras secundarias fuertes sobrerepresentadas y amplificadas preferencialmente...
+
+Partes por millón deben ser también consideradas $\rightarrow$ Puede haber muchas lecturas en las mismas posiciones por sobrerepresentación
+
+4. Secuenciación
+Idealmente deberían procesarse todas las muestras con lo mismos equipos, usando las mismas tecnologías y cantidad de fragmentos pero las librerías son cargadas en diferentes *flowcells* $\rightarrow$ Métodos como TMM (sesgo de coposición) o Counts per Million 
+
+5. Alineamiento de lecturas y cuantificación
+Lecturas en teoría mapearían a las regiones transcriptómicas de las cuales se generaron pero pueden mapear inconsistentemente a chros distintos (rearreglos cromosomales no conocidos en la referencia), contaminación exógena, splicing alternativo, regiones similares/idénticas en regiones múltiples del genoma, mapear fuera del transcriptoma...
+
+6. Análisis estadísticos
+No es posible muestrear a cada individuo en específico y no se pueden conocer (secuenciar) todos los transcritos de todos los genes expresados en cada célula de cada muestra... Predecir la expresión de un gen a partir de un modelo estadístico es fantasioso $\rightarrow$ aproximación. Aunado, los datos son de subconjuntos de la población, y las muestras no siempre son representativas, y en todos los casos dejan pie a la incertidumbre $\rightarrow$ Imposible generalizar de forma absoluta
+
+La expresión diferencial se declara según qué tanta siginfcancia posee $\rightarrow$ Usando p-values con umbrales (suele ser de $\alpha$ = 0.05) $\rightarrow$ Lo que quiere decir que cada 100 réplicas habrán 5 falsos positivos...
+- Corrección mediante métodos estadísticos...
+**Errores, ruido e incertidumbre**
+
+La realidad no es observable pero se busca modelar con estimaciones:
+Tenemos:
+- Errores residuales
+- De estimación
+	- Depende del modelo usado (regresión lineal o el que sea)
+- De medición 
+- Especificación
+- Ruido
+
+7. Interpretación de resultados
+
+Genes son conjuntos funcionales con funciones biológicas o vías que pueden unirlos, **no** entidades individuales $\rightarrow$ Es muy difícil investigarlos como entidades separadas!
+
+$p$-*values* son arbitrarios al final del día...
