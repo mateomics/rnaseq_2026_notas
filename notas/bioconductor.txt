@@ -1,0 +1,88 @@
+# Bioconductor
+
+> Leonardo Collado
+
+Congresos/talleres de *Bioconductor* $\rightarrow$ Según niveles
+
+1. Community board
+2. Technical Advisory Board
+3. Scientific Advisory Board
+
+Todas las funciones se acompañan de sus *viñetas* con ejemplos ejecutables (documentación de las mismas)
+- Mejores estándares de calidad que CRAN
+- Desde 2004
+- Viñetas 
+	- Explican las funciones de los paquetes
+- Workflows
+	- Explican paquetes dentro de BioConductor
+- Cada paquete con versiones en desarrollo y de release
+	- Se evalúan diario en distintos *OS*s
+	- Los releases dicen en qué sistemas funcionan
+- Ranking
+	- Qué tan usados son (más de la mano con qué tan específicos y recientes son)
+- Dependencias
+	- Cuántos paquetes necesita el paquete en sí mismo
+		- Bajo la lógcia de que más dependencias lo hace más frágil
+		- Pero la calidad de las dependencias influye
+- Filtros de calidad
+	- Se necesita lista de autores
+	- Emails
+	- Descripción > 3 líneas
+	- Publicaciones
+- Comunidad abierta
+	- No financiada o pagada salvo donativos
+	- Mantenimiento idóneo, no requerido
+
+`ctb`: Contribuidores, `aut`: Autores, `cre`: Creador
+
+
+### Notas de paquetes de Bioconductor con releases en octubre 2025
+
+Paquete seleccionado: `basilisk`, Aaron Lun [aut, cre, cph]
+
+El paquete busca congelar las versiones de todas las dependencias de python usadas, que es útil para asegurar la compatibilidad. Esto se logra con un ambiente de conda autocontenido y administrado por R/Bioconductor y asegura la reproducibilidad de un proyecto. 
+
+Tiene una *vignette* de extensión media. Sería bueno que se le agregara un índice pero se ve bien escrita. No tiene imágenes pero por la naturaleza del paquete tampoco las necesita. Aunque en la sección de preguntas solo se encuentran 2, ambas ya respondidas, hay varios *issues* en su repositorio de *GitHub*. El paquete está disponible para MacOS, Windows y también para Linux a través del `tar`. 
+
+## Summarize Experiment
+> `SummarizedExperiment`
+
+ 1. `rnaseqGene` workflow
+ 2. `SummarizedExperiment`
+Paquete del equipo nuclear de *Bioconductor* 
+- Hecho por Martin Morgan, Jim Hester, Hervé Pagès
+
+Permite organizar en tablas de subsets de rows y/o assays
+- RowRanges incluye todos los datos (chro, coordenadas, etc...)
+- RowData es menos info.
+
+ 3. `GenomicRanges`
+Objeto con posiciones de las secuencias, sus strands, etc...
+
+ 4. `GenomicRanges`
+
+## iSEE
+
+> Melissa Mayén
+
+Paquete de Bioconductor para exploración interactiva $\rightarrow$ A partir de objetos de Bioconductor
+
+Permite:
+- Visualizar matrices de expresión
+	- Sin código adicional
+- Inspeccionar genes (o conjunto de) 
+- Comparar clusters
+- Generar heatmaps o plots de reducción de dimensionalidad
+	- UMAP, tSNE, PCA...
+
+Construido sobre Shiny
+- Framework de R para hacer apps interactivas
+- Corre en el navegador
+
+En un `SingleCellExperiment`, además de las propiedades de `SummarizedExperiment`, se agregan:
+- `reducedDims()`
+- `altExps()`
+- Información especializada por célila
+	- QC metrics
+	- Clusters
+	- Anotaciones celulares
